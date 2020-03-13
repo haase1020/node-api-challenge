@@ -31,6 +31,19 @@ router.get('/:id',(req,res) => {
 });
 
 //POST a project
+router.post('/', (req,res) => {
+    const newProject = req.body
+    projectsDB
+    .insert(newProject)
+    .then(newProject => {
+        res.status(200).json(newProject);
+    })
+    .catch(err => {
+        res.status(500).json({
+            errorMessage: `Error: ${err}`
+        })
+    });
+});
 
 //DELETE a project by /:id
 
