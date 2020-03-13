@@ -51,7 +51,7 @@ router.delete('/:id', (req,res) => {
     actionsDB
     .remove(id)
     .then(deleteAction => {
-        res.status(200).json(deleteAction)
+        res.status(201).json(deleteAction)
     })
     .catch(err => {
         res.status(500).json({
