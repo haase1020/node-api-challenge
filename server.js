@@ -16,10 +16,10 @@ server.get('/', (req,res) => {
 
 })
 
-// const actionsRouter = require('./routers/actionsRouter.js');
+const actionsRouter = require('./routers/actionsRouter.js');
 const projectsRouter = require('./routers/projectsRouter');
 
-// server.use('/api/actions', actionsRouter)
+server.use('/api/actions', actionsRouter)
 server.use('/api/projects', projectsRouter)
 
 module.exports=server;
