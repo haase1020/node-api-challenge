@@ -20,7 +20,8 @@ router.get('/', (req,res) => {
 //GET actions by /:id
 router.get('/:id',(req,res) => {
     const { id } = req.params
-    actionsDB.get(id)
+    actionsDB
+    .get(id)
     .then(action => {
         res.status(200).json(action)
     })
@@ -30,6 +31,18 @@ router.get('/:id',(req,res) => {
 });
 
 //POST actions
+router.post('/', (req,res) => {
+    actionsDB
+    .insert(req.body)
+    .then(() => {
+        res.status(201).json(req.body);
+    })
+.catch(err => {
+    res.status(500).json({
+        errorMessage: `Error: ${err}`
+    })
+});
+});
 
 //DELETE actions by /:id
 
