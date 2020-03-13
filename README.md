@@ -40,13 +40,26 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Express is a web app framework that sigts on top of Node.js web server. Express is just a node.js module like any other module.
+
 - [ ] Describe Middleware?
+
+Middleware is used to add features to express. It allows us to extract out some of the processes in requests and make them readable.This also allows the requests to become easier to see the logic. It is a chain of functions that are executed in the order they are created in the code.
+
 
 - [ ] Describe a Resource?
 
+EVERYTHING is a resource and is accesible via a unique URI. (all of accessed information)
+
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+Usually a status code of 200 or 201
+
+
 - [ ] How can we partition our application into sub-applications?
+
+Using Express Routers
 
 ## Minimum Viable Product
 
