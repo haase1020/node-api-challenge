@@ -46,6 +46,19 @@ router.post('/', (req,res) => {
 });
 
 //DELETE a project by /:id
+router.delete('/:id',(req,res) => {
+    const { id } = req.params
+    projectsDB
+    .remove(id)
+    .then(deleteProject => {
+        res.status(201).json(deleteProject);
+    })
+    .catch(err => {
+        res.status(500).jason({
+            errorMessage: `Error ${err}`
+        })
+    });
+});
 
 //PUT a project by /:id
 
