@@ -18,6 +18,16 @@ router.get('/', (req,res) => {
 });
 
 //GET actions by /:id
+router.get('/:id',(req,res) => {
+    const { id } = req.params
+    actionsDB.get(id)
+    .then(action => {
+        res.status(200).json(action)
+    })
+    .catch(err => {
+        message: `Error: ${err}`
+    });
+});
 
 //POST actions
 
