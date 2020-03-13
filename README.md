@@ -1,6 +1,6 @@
 # Sprint Challenge: Express and Node.js - Projects & Actions
 
-## Description
+## Description March 13, 2020
 
 In this challenge, you design and create a web API to manage the following resources: `Projects` and `Actions`.
 
