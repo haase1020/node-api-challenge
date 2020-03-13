@@ -45,6 +45,20 @@ router.post('/', (req,res) => {
 });
 
 //DELETE actions by /:id
+//this one is not working***
+router.delete('/:id', (req,res) => {
+    const { id } = req.params
+    actionsDB
+    .remove(id)
+    .then(deleteAction => {
+        res.status(200).json(deleteAction)
+    })
+    .catch(err => {
+        res.status(500).json({
+            errorMessage: `Error: ${err}`
+        })
+    });
+});
 
 //PUT actions by /:id
 
