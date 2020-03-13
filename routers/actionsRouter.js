@@ -61,6 +61,20 @@ router.delete('/:id', (req,res) => {
 });
 
 //PUT actions by /:id
+router.put('/:id', (req,res) => {
+    const { id } =req.params
+    const updateAction = req.body
+    actionsDB
+    .update(id, updateAction)
+    .then(updateAction => {
+        res.status(200).json(updateAction);
+    })
+    .catch(err => {
+        res.status(500).json({
+            errorMessage: `Error: ${err}`
+        })
+    });
+});
 
 
 module.exports = router;
